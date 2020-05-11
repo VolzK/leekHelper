@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/leek_helper.iml" filepath="$PROJECT_DIR$/.idea/leek_helper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/leek-helper.iml" filepath="$PROJECT_DIR$/.idea/leek-helper.iml" />
     </modules>
   </component>
 </project>

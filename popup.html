@@ -40,16 +40,21 @@
         }
     </style>
 
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <script src="jquery-2.0.3.min.js"></script>
-    <script src="bootstrap-table.min.js"></script>
-    <script src="popup.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="vendors/bootstrap-table/bootstrap-table.min.js"></script>
+
+    <script src="js/popup.js"></script>
 </head>
 
 <body>
 <div id="main">
-    <div style="padding-top: -20px;">
-        <h3 style="color:red;display: inline;padding-left: 10px;">基金助手</h3>
+
+    <div style="height: 50px;width: 100%;text-align: center;">
+        <h3 style="color: darkred">基金助手(<i class="fa fa-qq" aria-hidden="true"></i>：1020317774)</h3>
+
         <!--<div style="display: inline;" id="updateTime"></div>-->
         <!--<div id="updateText"-->
         <!--     style="float: right;border: 1px solid #2b81e4;background-color: #2b81e4; color: #ffffff;padding-left: 6px;padding-right: 6px;border-radius: .5em;">-->
@@ -57,8 +62,7 @@
         <!--</div>-->
     </div>
 
-    <hr>
-    <div style="padding-left: 10px;">
+    <div style="margin: 10px auto;">
         <span><input type="checkbox" checked id="allCheck">全选</span>
         <span><input type="checkbox" checked name="select_click" data-col="FCODE">代码</span>
         <span><input type="checkbox" checked name="select_click" data-col="FNAME">名称</span>
@@ -71,10 +75,7 @@
         <span><input type="checkbox" checked name="select_click" data-col="portion">份额</span>
         <span><input type="checkbox" checked name="select_click" data-col="JRYK">今日盈亏</span>
         <br/>
-        <div style="float: right; padding-right: 10px;">
-            今日总盈亏：
-            <span id="todayTotalCount" style="font-size: 20px;"></span>
-        </div>
+        <h4>今日总盈亏：<span id="todayTotalCount" style="font-size: 22px;"></span></h4>
     </div>
     <div class="row-fluid">
         <div class="span12">
@@ -83,10 +84,11 @@
     </div>
     <div>
         <h4>使用说明：</h4>
-        <p class="text-danger">请在下方按照格式输入，每一个基金一行
-            <br/>格式：基金代码:持仓价:份额
-            <br/>例子：270002:1.2233:100</p>
-        <textarea class="form-control" rows="3" id="input_box"></textarea>
+        <p class="text-danger">
+            1、格式：基金代码:持仓价:份额 <br>
+            2、例子：270002:1.2233:100 &nbsp;（英文标点）
+        </p>
+        <textarea class="form-control" rows="5" id="input_box"></textarea>
     </div>
     <br>
     <div type="button" class="btn btn-success btn-block" id="save_button">保存</div>
