@@ -1,0 +1,43 @@
+﻿{
+  "manifest_version": 2,
+  "name": "基金助手",
+  "version": "0.0.1",
+  "description": "基金助手",
+  "author": "Wanzhk",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "64": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "scripts": [
+      "jquery-2.0.3.min.js",
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "http://fund.52sar.cn/*",
+    "activeTab",
+    "storage",
+    "tabs",
+    "https://favor.fund.eastmoney.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://favor.fund.eastmoney.com/*"
+      ],
+      "js": [
+        "jquery-2.0.3.min.js",
+        "bootstrap-table.min.js",
+        "fund.js"
+      ]
+    }
+  ]
+}

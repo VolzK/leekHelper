@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>基金助手</title>
+    <style type="text/css">
+        body {
+            white-space: nowrap;
+            width: auto;
+            min-width: 580px;
+        }
+
+        #main {
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 15px;
+        }
+
+        th {
+            border: 1px solid transparent !important;
+        }
+
+        td {
+            border: 1px solid transparent !important;
+            border-bottom: 1px solid rgb(204, 204, 204) !important;
+        }
+
+        .fixed-table-container thead th .sortable:after {
+            content: "↑↓"
+        }
+
+        .fixed-table-container thead th .asc:after {
+            content: "↑"
+        }
+
+        .fixed-table-container thead th .desc:after {
+            content: "↓"
+        }
+    </style>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-2.0.3.min.js"></script>
+    <script src="bootstrap-table.min.js"></script>
+    <script src="popup.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div style="padding-top: -20px;">
+        <h3 style="color:red;display: inline;padding-left: 10px;">基金助手</h3>
+        <!--<div style="display: inline;" id="updateTime"></div>-->
+        <!--<div id="updateText"-->
+        <!--     style="float: right;border: 1px solid #2b81e4;background-color: #2b81e4; color: #ffffff;padding-left: 6px;padding-right: 6px;border-radius: .5em;">-->
+        <!--    更新说明-->
+        <!--</div>-->
+    </div>
+
+    <hr>
+    <div style="padding-left: 10px;">
+        <span><input type="checkbox" checked id="allCheck">全选</span>
+        <span><input type="checkbox" checked name="select_click" data-col="FCODE">代码</span>
+        <span><input type="checkbox" checked name="select_click" data-col="FNAME">名称</span>
+        <span><input type="checkbox" checked name="select_click" data-col="gsz">估值</span>
+        <span><input type="checkbox" checked name="select_click" data-col="gszzl">涨跌</span>
+        <span><input type="checkbox" checked name="select_click" data-col="DWJZ">净值</span>
+        <span><input type="checkbox" checked name="select_click" data-col="cost">成本</span>
+        <span><input type="checkbox" checked name="select_click" data-col="costZDZ">差价</span>
+        <span><input type="checkbox" checked name="select_click" data-col="costZDF">成本涨跌</span>
+        <span><input type="checkbox" checked name="select_click" data-col="portion">份额</span>
+        <span><input type="checkbox" checked name="select_click" data-col="JRYK">今日盈亏</span>
+        <br/>
+        <div style="float: right; padding-right: 10px;">
+            今日总盈亏：
+            <span id="todayTotalCount" style="font-size: 20px;"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <table id="fund_table"></table>
+        </div>
+    </div>
+    <div>
+        <h4>使用说明：</h4>
+        <p class="text-danger">请在下方按照格式输入，每一个基金一行
+            <br/>格式：基金代码:持仓价:份额
+            <br/>例子：270002:1.2233:100</p>
+        <textarea class="form-control" rows="3" id="input_box"></textarea>
+    </div>
+    <br>
+    <div type="button" class="btn btn-success btn-block" id="save_button">保存</div>
+    <br>
+</div>
+</body>
+</html>
